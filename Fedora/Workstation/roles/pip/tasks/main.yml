@@ -1,0 +1,10 @@
+---    
+# Install packages from pip
+  - name: i3pystatus
+    pip: name=i3pystatus executable=pip3
+   
+  - name: beautifulsoup4
+    pip: name=beautifulsoup4 executable=pip3
+    
+  - name: colour
+    pip: name=colour executable=pip3

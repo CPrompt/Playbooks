@@ -1,0 +1,9 @@
+---
+# copy fonts over
+
+# create the fonts directory
+- file: path=/home/curtis/.fonts/ state=directory owner=curtis group=curtis
+
+#copy fonts to fonts directory
+- copy: src=/home/curtis/Playbooks/Fedora/Workstation/files/.fonts/ dest=/home/curtis/.fonts/ owner=curtis group=curtis
+  notify: update font cache

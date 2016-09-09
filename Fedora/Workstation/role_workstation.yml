@@ -1,0 +1,16 @@
+---
+- hosts: fedora
+  gather_facts: no
+  become: yes
+  become_user: root
+
+# can dry run with ansible-playbook playbook.yml --check --become-method=su -K  
+  roles:
+    #- common
+    #- pip
+    - configs
+    #- fonts
+    #- vim_curl
+    
+  
+  

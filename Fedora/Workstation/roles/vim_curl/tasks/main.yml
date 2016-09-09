@@ -1,0 +1,25 @@
+---    
+# Install packages for vim
+
+# create directory for autoload
+- file: path=/home/curtis/.vim/autoload state=directory owner=curtis group=curtis
+
+# create directory for bundle
+- file: path=/home/curtis/.vim/bundle/ state=directory owner=curtis group=curtis
+
+# install pathogen
+- name: install pathogen
+  get_url:
+    url: https://tpo.pe/pathogen.vim
+    dest: /home/curtis/.vim/autoload/pathogen.vim
+  
+
+# install syntastic
+- git: repo=https://github.com/scrooloose/syntastic.git dest=/home/curtis/.vim/bundle/ update=yes
+  
+# install airline
+- git: repo=https://github.com/vim-airline/vim-airline.git dest=/home/curtis/.vim/bundle/vim-airline/ update=yes
+
+# install gruvbox
+- git: repo=https://github.com/morhetz/gruvbox.git dest=/home/curtis/.vim/bundle/gruvbox/ update=yes
+

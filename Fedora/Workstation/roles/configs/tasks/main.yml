@@ -1,0 +1,46 @@
+---
+ # Copy config files
+ 
+    #----------------- geany ---------------------
+    # create geany config directory
+  - file: path=/home/curtis/.config/geany/ state=directory owner=curtis group=curtis
+  
+    #copy geany configs over
+  - copy: src=/home/curtis/Playbooks/Fedora/Workstation/files/geany/ dest=/home/curtis/.config/geany/ backup=yes owner=curtis group=curtis
+
+    #----------------- vim ------------------------
+    #create the .vim directory
+  - file: path=/home/curtis/.vim/ state=directory owner=curtis group=curtis
+  
+    #copy vim configs over
+  - copy: src=/home/curtis/Playbooks/Fedora/Workstation/files/vimrc dest=/home/curtis/.vim/ owner=curtis group=curtis  
+  
+    #create vim colors directory
+  - file: path=/home/curtis/.vim/colors/ state=directory owner=curtis group=curtis
+  
+    #copy gruvbox theme over
+  - synchronize: src=/home/curtis/Playbooks/Fedora/Workstation/files/gruvbox/colors/ dest=/home/curtis/.vim/colors/
+  
+    #----------------- i3 ------------------------
+    #create .i3 directory
+  - file: path=/home/curtis/.config/i3/ state=directory owner=curtis group=curtis
+  
+    #copy the i3 configs over
+  - synchronize: src=/home/curtis/Playbooks/Fedora/Workstation/files/.i3/ dest=/home/curtis/.config/i3/
+  
+    #----------------- irssi ----------------------
+    #create .irssi directory
+  - file: path=/home/curtis/.irssi/ state=directory owner=curtis group=curtis
+    
+    #copy the irssi configs over
+  - synchronize: src=/home/curtis/Playbooks/Fedora/Workstation/files/.irssi/ dest=/home/curtis/.irssi/
+  
+   #----------------- misc ----------------------
+   #copy the .Xdefaults
+  - copy: src=/home/curtis/Playbooks/Fedora/Workstation/files/.Xdefaults dest=/home/curtis/ backup=yes owner=curtis group=curtis
+  
+    #copy the .screenrc
+  - copy: src=/home/curtis/Playbooks/Fedora/Workstation/files/.screenrc dest=/home/curtis/ owner=curtis group=curtis
+
+    # copy bashrc
+  - copy: src=/home/curtis/Playbooks/Fedora/Workstation/files/.bashrc dest=/home/curtis/ owner=curtis group=curtis
