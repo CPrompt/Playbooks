@@ -34,10 +34,7 @@ status.register("pulseaudio",
 	format = ' : {volume}',)
 
 status.register("cmus",
-#   color = "#458588",
-    #color = '#00ff00',
     color = cmus_color,
-#   color_not_running = '#ebdbb2',
     color_not_running = cmus_not_running,
     format = '{status} {song_elapsed}/{song_length} {artist} - {title}',
     format_not_running = 'Not running',
@@ -48,15 +45,5 @@ status.register("cmus",
     },
     interval = 1,
     )
-'''
-status.register("now_playing",)
-'''
-'''
-status.register("mpd",
-        #color = '#458588',
-        color = '#458588',
-	status = {"pause": "","play": "","stop": "",},
-        format = '{status} {song_elapsed}/{len} {artist} - {title}',
-        )
-'''
+
 status.run()
