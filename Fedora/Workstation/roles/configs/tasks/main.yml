@@ -50,3 +50,9 @@
   
     # copy the hostname file
   - copy: src=/home/curtis/Playbooks/Fedora/Workstation/files/hostname dest=/etc/
+  
+    # copy sendmail config
+  - copy: src=/home/curtis/Playbooks/Fedora/Workstation/files/sendmail/sendmail.mc dest=/etc/mail/
+  
+    # copy sendmail hostname file
+  - copy: src=/home/curtis/Playbooks/Fedora/Workstation/files/sendmail/local-host-names dest=/etc/mail/

@@ -78,7 +78,7 @@
   - name:  Gimp
     dnf: name=gimp state=latest
     
-  #- name:  Dejadup backup program
+  - name:  Dejadup backup program
     dnf: name=deja-dup state=latest
     
   - name:  fwbackup
@@ -131,3 +131,9 @@
     
   - name: cmus
     dnf: name=cmus state=latest
+
+  - name: sendmail
+    dnf: name=sendmail state=latest
+    
+  - name: sendmail-cf
+    dnf: name=sendmail-cf state=latest

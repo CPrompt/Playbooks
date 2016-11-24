@@ -1,0 +1,3 @@
+---
+  # start the sendmail service
+  - service: name=sendmail state=restarted
