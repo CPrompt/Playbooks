@@ -128,3 +128,6 @@
 
   - name:  python3-netifaces
     dnf: name=python3-netifaces state=latest
+    
+  - name: cmus
+    dnf: name=cmus state=latest

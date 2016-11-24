@@ -12,7 +12,7 @@ theme_file = ""
 color_value = None
 default_color_value = "#ffffff"
 
-new_path = os.path.expanduser(os.path.join('~/.i3/i3pystatus/', 'colors'))
+new_path = os.path.expanduser(os.path.join('~/.config/i3/i3pystatus/', 'colors'))
 
 
 class Colors:
