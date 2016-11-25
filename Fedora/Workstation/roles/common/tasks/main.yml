@@ -134,6 +134,8 @@
 
   - name: sendmail
     dnf: name=sendmail state=latest
+    notify: enable sendmail service
     
   - name: sendmail-cf
     dnf: name=sendmail-cf state=latest
+    notify: start sendmail service

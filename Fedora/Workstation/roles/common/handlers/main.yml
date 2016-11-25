@@ -1,0 +1,8 @@
+---
+  # enable sendmail service
+- name: enable sendmail service
+  command: systemctl enable sendmail
+  
+  # start sendmail
+- name: start sendmail service
+  command: systemctl restart sendmail
