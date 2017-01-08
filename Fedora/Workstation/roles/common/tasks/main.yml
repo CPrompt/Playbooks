@@ -30,6 +30,15 @@
   - name:  python3-netifaces
     dnf: name=python3-netifaces state=latest
     
+  - name: python3-dnf
+    dnf:  name=python3-dnf state=latest
+    
+  - name: python3-dnfdaemon
+    dnf:  name=python3-dnfdaemon state=latest
+    
+  - name: gtk3-devel
+    dnf:  name=gtk3-devel.x86_64 state=latest
+    
   - name: sendmail
     dnf: name=sendmail state=latest
     notify: enable sendmail service

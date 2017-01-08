@@ -56,3 +56,12 @@
   
     # copy sendmail hostname file
   - copy: src=/home/curtis/Playbooks/Fedora/Workstation/files/sendmail/local-host-names dest=/etc/mail/
+  
+  #----------------sysctl---------------------------------
+  #disable ipv6
+  - sysctl:
+      name: net.ipv6.conf.all.disable
+      value: 1
+      sysctl_set: yes
+      state: present
+      reload: yes
