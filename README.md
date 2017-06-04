@@ -7,4 +7,4 @@ After running this playbook:
 3.  Mount external Music drive
 4.  Configure FirewallD for custom ports
 5.  Configure DiamonBack backup filelist
-6.  Set cron to run DiamondBack 
+6.  Set DiamondBack in systemd

@@ -36,16 +36,31 @@
   - name: python3-dnfdaemon
     dnf:  name=python3-dnfdaemon state=latest
     
+  - name: vim-powerline
+    dnf:  name=vim-plugin-powerline state=latest
+    
+  - name: ruby
+    dnf:  name=ruby state=latest
+    
+  - name: ruby-devel
+    dnf:  name=ruby-devel state=latest
+    
+  - name: redhat-rpm-config
+    dnf:  name=redhat-rpm-config state=latest
+    
   - name: gtk3-devel
     dnf:  name=gtk3-devel.x86_64 state=latest
     
   - name: sendmail
-    dnf: name=sendmail state=latest
+    dnf:  name=sendmail state=latest
     notify: enable sendmail service
     
   - name: sendmail-cf
     dnf: name=sendmail-cf state=latest
     notify: start sendmail service
+    
+  - name: colord-devel
+    dnf: name=colord-devel.x86_64 state=latest
   
 
 # console apps      
@@ -140,7 +155,7 @@
   - name: rss-glx-gnome-screensaver
     dnf: name=rss-glx-gnome-screensaver state=latest    
 
-      - name: xscreensaver
+  - name: xscreensaver
     dnf: name=xscreensaver state=latest
     
   - name: xscreensaver-base
@@ -182,31 +197,61 @@
     dnf: name=lame state=latest
     
   - name:  gstreamer
-    dnf: name=gstreamer state=latest
+    dnf: name=gstreamer.x86_64 state=latest
     
-  - name:  gstreamer    
-    dnf: name=gstreamer-ffmpeg state=latest
+  - name:  gstreamer-ffmpeg
+    dnf: name=gstreamer-ffmpeg.x86_64 state=latest
     
   - name:  gstreamer-plugins-bad
-    dnf: name=gstreamer-plugins-bad state=latest
+    dnf: name=gstreamer-plugins-bad.x86_64 state=latest
     
   - name:  gstreamer-plugins-bad-free
-    dnf: name=gstreamer-plugins-bad-free state=latest
+    dnf: name=gstreamer-plugins-bad-free.x86_64 state=latest
     
   - name:  gstreamer-plugins-bad-free-extras
-    dnf: name=gstreamer-plugins-bad-free-extras state=latest
+    dnf: name=gstreamer-plugins-bad-free-extras.x86_64 state=latest
     
   - name:  gstreamer-plugins-bad-free-nonfree
-    dnf: name=gstreamer-plugins-bad-nonfree state=latest
+    dnf: name=gstreamer-plugins-bad-nonfree.x86_64 state=latest
   
   - name:  gstreamer-plugins-base
-    dnf: name=gstreamer-plugins-base state=latest
+    dnf: name=gstreamer-plugins-base.x86_64  state=latest
     
   - name:  gstreamer-plugins-good
-    dnf: name=gstreamer-plugins-good state=latest
-    
+    dnf: name=gstreamer-plugins-good.x86_64  state=latest
+   
   - name:  gstreamer-plugins-ugly
-    dnf: name=gstreamer-plugins-ugly state=latest
-    
+    dnf: name=gstreamer-plugins-ugly.x86_64   state=latest
+
+  - name: gstreamer-tools
+    dnf: name=gstreamer-tools.x86_64 state=latest
+
+  - name: gstreamer1
+    dnf: name=gstreamer1.x86_64 state=latest
+
+#  - name: gstreamer1-libnav.x86_64
+#    dnf: name=gstreamer1-libnav.x86_64 state=latest
+
+  - name: gstreamer1-plugins-bad-free
+    dnf: name=gstreamer1-plugins-bad-free.x86_64 state=latest
+
+  - name: gstreamer1-plugins-bad-free-extras
+    dnf: name=gstreamer1-plugins-bad-free-extras.x86_64 state=latest
+
+  - name: gstreamer1-plugins-bad-free-gtk
+    dnf: name=gstreamer1-plugins-bad-free-gtk.x86_64 state=latest
+
+  - name: gstreamer1-plugins-bad-freeworld
+    dnf: name=gstreamer1-plugins-bad-freeworld.x86_64 state=latest
+
+  - name: gstreamer1-plugins-base
+    dnf: name=gstreamer1-plugins-base.x86_64 state=latest
+
+  - name: gstreamer1-plugins-good
+    dnf: name=gstreamer1-plugins-good.x86_64 state=latest
+
+  - name: gstreamer1-plugins-ugly
+    dnf: name=gstreamer1-plugins-ugly.x86_64 state=latest
+
   - name: easytag
     dnf: name=easytag state=latest

@@ -6,14 +6,14 @@
   - file: path=/home/curtis/.config/geany/ state=directory owner=curtis group=curtis
 
     #copy geany configs over
-  - copy: src=/home/curtis/Playbooks/Fedora/Workstation/files/geany/ dest=/home/curtis/.config/geany/ backup=yes owner=curtis group=curtis
+  - copy: src=/home/curtis/configs/configs/geany dest=/home/curtis/.config/geany/ backup=yes owner=curtis group=curtis
 
     #----------------- vim ------------------------
     #create the .vim directory
   - file: path=/home/curtis/.vim/ state=directory owner=curtis group=curtis
 
     #copy vim configs over
-  - copy: src=/home/curtis/Playbooks/Fedora/Workstation/files/vimrc dest=/home/curtis/.vim/ owner=curtis group=curtis
+  - copy: src=/home/curtis/configs/configs/vimrc dest=/home/curtis/.vim/ owner=curtis group=curtis
 
     #create vim colors directory
   - file: path=/home/curtis/.vim/colors/ state=directory owner=curtis group=curtis
@@ -26,24 +26,24 @@
   - file: path=/home/curtis/.config/i3/ state=directory owner=curtis group=curtis
 
     #copy the i3 configs over
-  - synchronize: src=/home/curtis/Playbooks/Fedora/Workstation/files/.i3/ dest=/home/curtis/.config/i3/
+  - synchronize: src=/home/curtis/configs/configs/i3/ dest=/home/curtis/.config/i3/
 
     #----------------- irssi ----------------------
     #create .irssi directory
   - file: path=/home/curtis/.irssi/ state=directory owner=curtis group=curtis
 
     #copy the irssi configs over
-  - synchronize: src=/home/curtis/Playbooks/Fedora/Workstation/files/.irssi/ dest=/home/curtis/.irssi/
+  - synchronize: src=/home/curtis/configs/configs/.irssi/ dest=/home/curtis/.irssi/
 
    #----------------- misc ----------------------
    #copy the .Xdefaults
-  - copy: src=/home/curtis/Playbooks/Fedora/Workstation/files/.Xdefaults dest=/home/curtis/ backup=yes owner=curtis group=curtis
+  - copy: src=/home/curtis/configs/configs/.Xdefaults dest=/home/curtis/ backup=yes owner=curtis group=curtis
 
     #copy the .screenrc
-  - copy: src=/home/curtis/Playbooks/Fedora/Workstation/files/.screenrc dest=/home/curtis/ owner=curtis group=curtis
+  - copy: src=/home/curtis/configs/configs/.screenrc dest=/home/curtis/ owner=curtis group=curtis
 
     # copy bashrc
-  - copy: src=/home/curtis/Playbooks/Fedora/Workstation/files/.bashrc dest=/home/curtis/ owner=curtis group=curtis
+  - copy: src=/home/curtis/configs/configs/.bashrc dest=/home/curtis/ owner=curtis group=curtis
   
     # copy the DIR_COLORS file
   - copy: src=/home/curtis/Playbooks/Fedora/Workstation/files/etc/DIR_COLORS dest=/etc/ backup=yes
