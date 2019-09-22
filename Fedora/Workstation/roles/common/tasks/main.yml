@@ -11,6 +11,12 @@
     
   - name:  p7zip
     dnf: name=p7zip.x86_64 state=latest
+  
+  - name:  p7zip-plugins
+    dnf: name=p7zip-plugins.x86_64 state=latest
+  
+  - name:  p7zip-gui
+    dnf: name=p7zip-gui.x86_64 state=latest
     
   - name:  curl
     dnf: name=curl state=latest
@@ -53,14 +59,20 @@
     
   - name: sendmail
     dnf:  name=sendmail state=latest
-    notify: enable sendmail service
+    #notify: enable sendmail service
     
   - name: sendmail-cf
     dnf: name=sendmail-cf state=latest
-    notify: start sendmail service
+    #notify: start sendmail service
     
   - name: colord-devel
     dnf: name=colord-devel.x86_64 state=latest
+
+  - name: perl-Capture-Tiny
+    dnf: name=perl-Capture-Tiny state=latest
+
+  - name: perl-Clipboard
+    dnf: name=perl-Clipboard state=latest
   
 
 # console apps      
@@ -90,9 +102,11 @@
 
   - name:  urxvt 256c
     dnf: name=rxvt-unicode-256color state=latest
+
+  - name: kpcli
+    dnf: name=kpcli state=latest
     
 # applications
-    
   - name: libreoffice
     dnf: name=libreoffice state=latest
   
@@ -113,6 +127,12 @@
     
   - name:  i3 Window Manager
     dnf: name=i3 state=latest
+    
+  - name: cherrytree
+    dnf: name=cherrytree state=latest
+    
+  - name: rdiff-backup
+    dnf: name=rdiff-backup state=latest
 
 
 # internet
@@ -127,6 +147,9 @@
     
   - name: mutt
     dnf: name=mutt state=latest
+    
+  - name: qutebrowser
+    dnf: name=qutebrowser state=latest
       
     
 
@@ -186,7 +209,13 @@
 
   - name:  Gimp
     dnf: name=gimp state=latest
-    
+
+# look and feel
+  - name: lxappearance
+    dnf: name=lxappearance.x86_64 state=latest
+
+  - name: lxappearance-devel
+    dnf: name=lxappearance-devel.x86_64 state=latest
     
 
 # audio
@@ -195,7 +224,13 @@
   
   - name:  lame
     dnf: name=lame state=latest
-    
+
+  - name: gvfs-mtp
+    dnf: name=gvfs-mtp state=latest
+
+  - name: simple-mtpfs
+    dnf: name=simple-mtpfs state=latest
+
   - name:  gstreamer
     dnf: name=gstreamer.x86_64 state=latest
     
@@ -238,8 +273,8 @@
   - name: gstreamer1-plugins-bad-free-extras
     dnf: name=gstreamer1-plugins-bad-free-extras.x86_64 state=latest
 
-  - name: gstreamer1-plugins-bad-free-gtk
-    dnf: name=gstreamer1-plugins-bad-free-gtk.x86_64 state=latest
+    #- name: gstreamer1-plugins-bad-free-gtk
+    #dnf: name=gstreamer1-plugins-bad-free-gtk.x86_64 state=latest
 
   - name: gstreamer1-plugins-bad-freeworld
     dnf: name=gstreamer1-plugins-bad-freeworld.x86_64 state=latest

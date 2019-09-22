@@ -1,0 +1,8 @@
+---
+  fedora_current: 30 
+
+  files_path: "/home/curtis/git/Playbooks/files/"
+  
+  configs_path: "/home/curtis/"
+
+  configs_user: "curtis"

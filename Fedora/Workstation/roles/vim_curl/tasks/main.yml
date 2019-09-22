@@ -12,6 +12,7 @@
   get_url:
     url: https://tpo.pe/pathogen.vim
     dest: /home/curtis/.vim/autoload/pathogen.vim
+    
   
 
 # install syntastic

@@ -8,3 +8,14 @@
     
   - name: colour
     pip: name=colour executable=pip3
+ 
+  - name: net-ifaces
+    pip: name=netifaces executable=pip3
+    
+  - name: cherrypy
+    pip: name=CherryPy executable=pip3
+    
+  #- name: rdiff-backup
+  #  pip: name=rdiff-backup executable=pip3    
+    
+  

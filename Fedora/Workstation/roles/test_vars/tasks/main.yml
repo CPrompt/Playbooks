@@ -1,0 +1,5 @@
+---
+- name: Display vars
+  debug:
+      msg:
+          - "Testing var : {{ fedora_current }}"

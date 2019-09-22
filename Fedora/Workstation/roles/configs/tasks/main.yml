@@ -2,66 +2,77 @@
  # Copy config files
 
     #----------------- geany ---------------------
-    # create geany config directory
+    #create geany config directory
   - file: path=/home/curtis/.config/geany/ state=directory owner=curtis group=curtis
 
     #copy geany configs over
-  - copy: src=/home/curtis/configs/configs/geany dest=/home/curtis/.config/geany/ backup=yes owner=curtis group=curtis
+  - copy: src=/home/curtis/git/Playbooks/files/configs/geany dest=/home/curtis/.config/ backup=yes owner=curtis group=curtis
 
     #----------------- vim ------------------------
     #create the .vim directory
   - file: path=/home/curtis/.vim/ state=directory owner=curtis group=curtis
 
     #copy vim configs over
-  - copy: src=/home/curtis/configs/configs/vimrc dest=/home/curtis/.vim/ owner=curtis group=curtis
+  - copy: src=/home/curtis/git/Playbooks/files/configs/vimrc dest=/home/curtis/.vim/ owner=curtis group=curtis
 
     #create vim colors directory
   - file: path=/home/curtis/.vim/colors/ state=directory owner=curtis group=curtis
 
     #copy gruvbox theme over
-  - synchronize: src=/home/curtis/Playbooks/Fedora/Workstation/files/gruvbox/colors/ dest=/home/curtis/.vim/colors/
+  - copy: src=/home/curtis/git/Playbooks/files/gruvbox.vim dest=/home/curtis/.vim/colors/
 
     #----------------- i3 ------------------------
     #create .i3 directory
   - file: path=/home/curtis/.config/i3/ state=directory owner=curtis group=curtis
 
     #copy the i3 configs over
-  - synchronize: src=/home/curtis/configs/configs/i3/ dest=/home/curtis/.config/i3/
+  - synchronize: src=/home/curtis/git/Playbooks/files/configs/i3/ dest=/home/curtis/.config/i3/
+    become: false
 
     #----------------- irssi ----------------------
     #create .irssi directory
   - file: path=/home/curtis/.irssi/ state=directory owner=curtis group=curtis
 
     #copy the irssi configs over
-  - synchronize: src=/home/curtis/configs/configs/.irssi/ dest=/home/curtis/.irssi/
+  - synchronize: src=/home/curtis/git/Playbooks/files/configs/.irssi/ dest=/home/curtis/.irssi/
+    become: false
+    
+   #----------------- xfce themes ---------------
+   #create .theme directory
+  - file: path=/home/curtis/.themes/ state=directory owner=curtis group=curtis
+  
+   #copy BSM Themese to directory
+  #- synchronize: src=/home/curtis/git/Playbooks/files/.themes/ dest=/home/curtis/
+  - copy: src=/home/curtis/git/Playbooks/files/.themes/ dest=/home/curtis/.themes/ backup=no owner=curtis group=curtis
 
    #----------------- misc ----------------------
    #copy the .Xdefaults
-  - copy: src=/home/curtis/configs/configs/.Xdefaults dest=/home/curtis/ backup=yes owner=curtis group=curtis
+  - copy: src=/home/curtis/git/Playbooks/files/configs/.Xdefaults dest=/home/curtis/ backup=yes owner=curtis group=curtis
 
     #copy the .screenrc
-  - copy: src=/home/curtis/configs/configs/.screenrc dest=/home/curtis/ owner=curtis group=curtis
+  - copy: src=/home/curtis/git/Playbooks/files/configs/.screenrc dest=/home/curtis/ owner=curtis group=curtis
 
     # copy bashrc
-  - copy: src=/home/curtis/configs/configs/.bashrc dest=/home/curtis/ owner=curtis group=curtis
+  - copy: src=/home/curtis/git/Playbooks/files/configs/.bashrc dest=/home/curtis/ owner=curtis group=curtis
   
     # copy the DIR_COLORS file
-  - copy: src=/home/curtis/Playbooks/Fedora/Workstation/files/etc/DIR_COLORS dest=/etc/ backup=yes
+  - copy: src=/home/curtis/git/Playbooks/files/DIR_COLORS dest=/etc/ backup=yes
+  - copy: src=/home/curtis/git/Playbooks/files/DIR_COLORS.256color dest=/etc/ backup=yes
   
     # copy the hostname file
-  - copy: src=/home/curtis/Playbooks/Fedora/Workstation/files/hostname dest=/etc/
+  - copy: src=/home/curtis/git/Playbooks/files/hostname dest=/etc/
   
     # copy sendmail config
-  - copy: src=/home/curtis/Playbooks/Fedora/Workstation/files/sendmail/sendmail.mc dest=/etc/mail/
+  - copy: src=/home/curtis/git/Playbooks/files/sendmail.mc dest=/etc/mail/
   
     # copy sendmail hostname file
-  - copy: src=/home/curtis/Playbooks/Fedora/Workstation/files/sendmail/local-host-names dest=/etc/mail/
+  - copy: src=/home/curtis/git/Playbooks/files/local-host-names dest=/etc/mail/
   
   #----------------sysctl---------------------------------
   #disable ipv6
-  - sysctl:
-      name: net.ipv6.conf.all.disable
-      value: 1
-      sysctl_set: yes
-      state: present
-      reload: yes
+  #- sysctl:
+  #    name: net.ipv6.conf.all.disable_ipv6
+  #    value: 1
+  #    sysctl_set: yes
+  #    state: present
+  #    reload: yes

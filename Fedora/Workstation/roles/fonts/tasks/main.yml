@@ -2,8 +2,14 @@
 # copy fonts over
 
 # create the fonts directory
-- file: path=/home/curtis/.fonts/ state=directory owner=curtis group=curtis
+- file: path=/home/curtis/git/Playbooks/files/.fonts/ state=directory owner=curtis group=curtis
 
 #copy fonts to fonts directory
-- copy: src=/home/curtis/Playbooks/Fedora/Workstation/files/.fonts/ dest=/home/curtis/.fonts/ owner=curtis group=curtis
+- copy: src=/home/curtis/git/Playbooks/files/.fonts/ dest=/home/curtis/.fonts/ owner=curtis group=curtis
   notify: update font cache
+
+#create icons directory
+- file: path=/home/curtis/git/Playbooks/files/.icons/ state=directory owner=curtis group=curtis
+
+#copy icons
+- copy: src=/home/curtis/git/Playbooks/files/.icons/ dest=/home/curtis/.icons/ owner=curtis group=curtis

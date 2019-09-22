@@ -1,16 +1,22 @@
 ---
-# RPM Fusion - yum
-  - name:  Install RPM Fusion Free
-    yum: name=https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-24.rpm state=present
-      
+#Install RPM Fusion repos
+#
+#This might move off to a separate role
+#- name:  Install RPM Fusion Free
+#  yum: name={{ item }}
+#       state=present
+#         
+#  with_items:
+#    - https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-{{ fedora_current }}.noarch.rpm
+#    - https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-{{ fedora_current }}.noarch.rpm
 
-#  update all packages
-#- name: upgrade all pacakges
-#  dnf: name=* state=latest
 
-# reboot the workstation
-#- name: reboot computer
-#  command: /sbin/reboot
+#update all packages
+- name: upgrade all pacakges
+  dnf: name=* state=latest
 
-#- name: Wait for computer to finish rebooting
-#  local_action: wait_for_host="{{ inventory_hostname }}"
+# Commenting out for testing
+    #notify:
+    #  - Reboot computer
+    #  - Wait for reboot
+
